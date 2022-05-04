@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+header.sticky {
+    background: #fff;
+    padding: 20px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+header .logo {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+header.sticky .logo {
+    color: #111;
+}
+header ul {
+    position: relative;
+    display: flex;
+}
+header ul li {
+    position: relative;
+}
+header ul li a {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    color: #fff;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+header.sticky ul li a {
+    color: #111;
+}
+section {
+    padding: 100px;
+}
+.banner {
+    position: relative;
+    min-height: 100vh;
+    background: url(images/banner.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner h2 {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 65px;
+}
+.banner h2 span {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+}
+.banner h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+/* .btn {
+    position: relative;
+    background: #2196f3;
+    display: inline-block;
+    color: #fff;
+    margin-top: 18px;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: 0.5s;
+} */
+.btn {
+    width: 120px;
+    height: 35px;
+    background: #2196f3;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: none;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: #fff;
+}
+.btn:hover span {
+    padding-right: 15px;
+}
+.btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.btn span a {
+    color: #fff;
+}
+.submitbtn,
+.morebtn {
+    width: 100px;
+    height: 30px;
+    background: #2196f3;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 6px rgba(0, 0, 0, 0.3);
+}
+.submitbtn span a,
+.morebtn span a {
+    color: #fff;
+}
+.submitbtn:hover,
+.morebtn:hover {
+    background: #2196f3;
+	opacity: 1.6;
+}
+.submitbtn:active,
+.morebtn:active {
+    background: #2196f3;
+    opacity: 1.6;
+    box-shadow: 0 5px #666;
+    transform: translateY(5px);
+}
+.heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111;
+}
+.heading h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+.contentbox {
+    margin-right: 30px;
+}
+.contentbox h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.contentbox p {
+    text-align: justify;
+    text-indent: 20px;
+}
+.w50 {
+    min-width: 50%;
+}
+img {
+    max-width: 100%;
+}
+.services {
+    background:url(images/banner2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.heading.white {
+    color: #fff;
+}
+.heading.white h2 {
+    margin-bottom: 15px;
+}
+.services .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.services .content .servicesbox {
+    padding: 40px 20px;
+    background: #222;
+    opacity: 0.8;
+    color: #fff;
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: grab;
+}
+.services .content .servicesbox:hover {
+    background: #2196f3;
+}
+.services .content .servicesbox img {
+    max-width: 80px;
+    filter: invert(1);
+}
+.services .content .servicesbox h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.work .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.work .content .workbox {
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+@media (max-width: 1024px) {
+    .work .content .workbox {
+        width: 40%;
+    }
+}
+.work .content .workbox img {
+    min-width: 100%;
+}
+.testimonial {
+    background: url(images/testimonial.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.testimonial .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.testimonial .content .testimonialbox {
+    max-width: calc(50% - 40px);
+    padding: 60px 40px;
+    margin: 20px;
+    background: #2196f3;
+    opacity: 0.9;
+}
+.testimonial .content .testimonialbox p {
+    color: #fff;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+}
+.testimonial .content .testimonialbox h3 {
+    margin-top: 40px;
+    text-align: end;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+}
+.testimonial .content .testimonialbox h3 span {
+    font-size: 14px;
+    font-weight: 400;
+}
+.contact {
+    background: #222;
+}
+.contactinfo {
+    min-width: 40%;
+}
+.contactinfobox {
+    position: relative;
+}
+.contactinfobox .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.contactinfobox .box .icon {
+    min-width: 40px;
+    padding-top: 4px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 24px;
+}
+.contactinfobox .box .text {
+    margin-left: 20px;
+    display: flex;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+.contactinfobox .box .text h3 {
+    font-weight: 500;
+    color: #2196f3;
+    margin-bottom: 0;
+}
+.formbox {
+    min-width: 60%;
+    background: #eee;
+    padding: 20px;
+}
+.formbox form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.formbox form h3, 
+.contactinfo h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    /* text-align: center; */
+}
+.formbox form h3 {
+    text-align: center;
+    color: #111;
+    font-size: 20px;
+    font-weight: 600;
+}
+.formbox form input,
+.formbox form textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: #fff;
+    resize: none;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+.formbox form textarea {
+    min-height: 200px;
+}
+.formbox form input::placeholder,
+.formbox form textarea::placeholder {
+    color: #999;
+}
+.formbox form input[type="submit"]{
+    max-width: 100px;
+    background: #2196f3;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+}
+.copyright {
+    background: #000;
+    color: #fff; 
+    text-align: center;
+    padding: 10px;
+}
+.scroll-btn {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	width: 45px;
+	height: 45px;
+    background: #2196f3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	color: #fff;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+}
+@media (max-width: 768px) {
+    header, header.sticky {
+        padding: 20px 50px;
+        z-index: 1000;
+    }
+    .menu {
+        position: fixed;
+        top: 68px;
+        right: -100%;
+        display: block;
+        padding: 100px 50px;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        transition: 0.5s;
+        z-index: 999;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .menu.aktive {
+        right: 0;
+        transition: 0.5s;
+    }
+    header ul li a {
+        color: #111;
+        font-size: 30px;
+        margin: 20px;
+    }
+    .toggle {
+        width: 40px;
+        height: 40px;
+        background: url(images/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .toggle.aktive {
+        background: url(images/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    header.sticky .toggle {
+        filter: invert(1);
+    }
+    .banner h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .banner h2 span {
+        font-size: 42px;
+    }
+    .banner h3 {
+        font-size: 14px;
+    }
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .contentbox {
+        margin-bottom: 30px;
+    }
+    .work .content .workbox {
+        width: 50%;
+    }
+    .testimonial .content .testimonialbox {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+    .formbox form h3 {
+        text-align: center;
+    }
+    .contactinfo {
+        display: none;
+    }
+}
+@media (max-width: 425px) {
+    section {
+        padding: 25px;
+    }
+    .work .content .workbox {
+        width: 70%;
+    }
+}
